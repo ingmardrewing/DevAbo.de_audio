@@ -13,7 +13,8 @@
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 
 - (IBAction)Play:(id)sender;
-- (IBAction)locate:(id)sender;
+- (void) setForeground;
+- (void) setBackground;
 
 @end
 
