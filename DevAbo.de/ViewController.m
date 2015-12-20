@@ -6,11 +6,13 @@
 //  Copyright © 2015 Ingmar Drewing. All rights reserved.
 //
 
+#import "Tracklist.h"
 #import "ViewController.h"
 @import AVFoundation;
 
 @interface ViewController (){
     AVAudioPlayer *_audioPlayer;
+    Tracklist *_tracklist;
 }
 
 @end
@@ -29,12 +31,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"view did load");
-    NSString *path = [NSString stringWithFormat:@"%@/test.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
+
+    // Create tracklist, thus allowing the audioplayer to get soundUrls
+    _tracklist = [[Tracklist alloc] init];
     // Create audio player object and initialize with URL to sound
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[_tracklist getSoundUrl]
+                                                          error:nil];
+    
 }
 
 
