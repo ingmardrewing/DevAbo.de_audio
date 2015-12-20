@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		213622A01C26C30E00D667C5 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2136229F1C26C30E00D667C5 /* test.mp3 */; };
+		213622A31C26C54800D667C5 /* Tracklist.m in Sources */ = {isa = PBXBuildFile; fileRef = 213622A21C26C54800D667C5 /* Tracklist.m */; };
 		2145BAE61C26BA010074CADE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2145BAE51C26BA010074CADE /* main.m */; };
 		2145BAE91C26BA010074CADE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2145BAE81C26BA010074CADE /* AppDelegate.m */; };
 		2145BAEC1C26BA010074CADE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2145BAEB1C26BA010074CADE /* ViewController.m */; };
@@ -18,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		2136229F1C26C30E00D667C5 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
+		213622A11C26C50600D667C5 /* Tracklist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tracklist.h; sourceTree = "<group>"; };
+		213622A21C26C54800D667C5 /* Tracklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracklist.m; sourceTree = "<group>"; };
 		2145BAE11C26BA010074CADE /* DevAbo.de.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevAbo.de.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2145BAE51C26BA010074CADE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2145BAE71C26BA010074CADE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -69,6 +72,8 @@
 				2145BAF21C26BA010074CADE /* LaunchScreen.storyboard */,
 				2145BAF51C26BA010074CADE /* Info.plist */,
 				2145BAE41C26BA010074CADE /* Supporting Files */,
+				213622A11C26C50600D667C5 /* Tracklist.h */,
+				213622A21C26C54800D667C5 /* Tracklist.m */,
 			);
 			path = DevAbo.de;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				2145BAEC1C26BA010074CADE /* ViewController.m in Sources */,
 				2145BAE91C26BA010074CADE /* AppDelegate.m in Sources */,
 				2145BAE61C26BA010074CADE /* main.m in Sources */,
+				213622A31C26C54800D667C5 /* Tracklist.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
