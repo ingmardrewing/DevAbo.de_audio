@@ -8,11 +8,13 @@
 
 #import "Tracklist.h"
 #import "ViewController.h"
+@import CoreLocation;
 @import AVFoundation;
 
 @interface ViewController (){
     AVAudioPlayer *_audioPlayer;
     Tracklist *_tracklist;
+    CLLocationManager *locationManager;
 }
 
 @end
@@ -26,25 +28,33 @@
 
 - (IBAction)locate:(id)sender {
     NSLog(@"pushed location");
+    float Lat = locationManager.location.coordinate.latitude;
+    float Long = locationManager.location.coordinate.longitude;
+    NSLog(@"Lat : %f  Long : %f",Lat,Long);
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //  locationServicesEnabled class method of CLLocationManager
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    [locationManager startUpdatingLocation];
+    [locationManager requestAlwaysAuthorization];
+
 
     // Create tracklist, thus allowing the audioplayer to get soundUrls
     _tracklist = [[Tracklist alloc] init];
+    
     // Create audio player object and initialize with URL to sound
     _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[_tracklist getSoundUrl]
                                                           error:nil];
-    
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

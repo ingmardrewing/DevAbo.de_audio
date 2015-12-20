@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@import CoreLocation;
+@import AVFoundation;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CLLocationManagerDelegate>
 
 - (IBAction)Play:(id)sender;
+- (IBAction)locate:(id)sender;
 
 @end
 

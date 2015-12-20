@@ -23,7 +23,6 @@
 }
 
 - (NSURL *) getSoundUrl {
-    NSLog(@"view did load");
     NSString *path = [NSString stringWithFormat:@"%@/%@.%@", [[NSBundle mainBundle] resourcePath], self->track->filename, self->track->filetype ];
     NSLog(@"%@ <-path", path );
     return [NSURL fileURLWithPath:path];
