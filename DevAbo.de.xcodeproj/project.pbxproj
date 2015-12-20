@@ -124,6 +124,11 @@
 					2145BAE01C26BA010074CADE = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = ZVZ884J6BD;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
