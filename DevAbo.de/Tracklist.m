@@ -15,17 +15,46 @@
 - (id)init {
     self = [super init];
     
-    self->track = [[Track alloc] init];
-    self->track->filename = @"test";
-    self->track->filetype = @"mp3";
-
+    self->tracks = [
+        [NSArray alloc] initWithObjects:
+            [[Track alloc] initWithTrackname:@"Marktkirche"
+                                 andFilename:@"marktkirche"
+                                 andFiletype:@"mp3"
+                                 andLatitude:50.0822809f
+                                andLongitude:8.2405615f ],
+            [[Track alloc] initWithTrackname:@"Schulberg"
+                                 andFilename:@"schulberg"
+                                 andFiletype:@"mp3"
+                                 andLatitude:50.0836f
+                                andLongitude:8.2368f ],
+            [[Track alloc] initWithTrackname:@"Synagoge"
+                                 andFilename:@"synagoge"
+                                 andFiletype:@"mp3"
+                                 andLatitude:50.0832f
+                                andLongitude:8.2363f ],
+            [[Track alloc] initWithTrackname:@"Hinter dem Theater"
+                                 andFilename:@"hinterdemtheater"
+                                 andFiletype:@"mp3"
+                                 andLatitude:50.0830f
+                                andLongitude:8.2454f ],
+            nil];
     return self;
 }
 
-- (NSURL *) getSoundUrl {
-    NSString *path = [NSString stringWithFormat:@"%@/%@.%@", [[NSBundle mainBundle] resourcePath], self->track->filename, self->track->filetype ];
-    NSLog(@"%@ <-path", path );
-    return [NSURL fileURLWithPath:path];
+- (NSURL *) getSoundUrlAtLongitude:(float)longitude_ andLatitiude:(float)latitude_ {
+    NSURL *trackUrl;
+    for( Track *track in self->tracks){
+        if ( [track isNearLatitude:latitude_ andLongitude:longitude_] ) {
+            NSString *path = [NSString stringWithFormat:@"%@/%@.%@",
+                              [[NSBundle mainBundle] resourcePath],
+                              track->filename ,
+                              track->filetype ] ;
+            trackUrl = [NSURL fileURLWithPath:path] ;
+            break;
+        }
+    }
+    
+    return trackUrl;
 }
 
 @end

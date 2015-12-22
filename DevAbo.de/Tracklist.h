@@ -10,9 +10,10 @@
 #import <Foundation/Foundation.h>
 
 @interface Tracklist : NSObject {
-    Track *track;
+    NSArray *tracks;
 }
-- (NSURL *) getSoundUrl;
+
 - (id) init;
+- (NSURL *) getSoundUrlAtLongitude: (float) longitude_ andLatitiude: (float) latitude_;
 
 @end

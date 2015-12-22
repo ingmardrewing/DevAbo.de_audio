@@ -14,6 +14,15 @@
     @public NSString *filename;
     @public NSString *filetype;
     @public NSString *trackname;
+    @public BOOL unplayed;
 }
+
+- (id) initWithTrackname: (NSString *) trackname_
+             andFilename: (NSString *) filename_
+             andFiletype: (NSString *) filetype_
+             andLatitude: (float) latitude_
+            andLongitude: (float) longitude;
+
+- (BOOL) isNearLatitude: (float) latitude_ andLongitude: (float) longitude_;
 
 @end

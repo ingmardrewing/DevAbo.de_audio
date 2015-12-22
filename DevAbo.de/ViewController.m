@@ -39,11 +39,15 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"locationManager called");
-
     float Lat = locationManager.location.coordinate.latitude;
     float Long = locationManager.location.coordinate.longitude;
-    NSLog(@"Lat : %f  Long : %f",Lat,Long);
+    
+    NSURL *soundUrl = [_tracklist getSoundUrlAtLongitude:Long andLatitiude:Lat ];
+    if( NULL != soundUrl){
+        NSLog(@"soundUrl: %@", soundUrl.absoluteString );
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+        [_audioPlayer play];
+    }
 }
 
 
@@ -68,10 +72,7 @@
 
     // Create tracklist, thus allowing the audioplayer to get soundUrls
     _tracklist = [[Tracklist alloc] init];
-    
-    // Create audio player object and initialize with URL to sound
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[_tracklist getSoundUrl]
-                                                          error:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
