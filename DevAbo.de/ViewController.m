@@ -49,6 +49,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    
+    NSError *setCategoryError = nil;
+    if (![session setCategory:AVAudioSessionCategoryPlayback
+                  withOptions:AVAudioSessionCategoryOptionMixWithOthers
+                        error:&setCategoryError]) {
+        // handle error
+    }
     
     // Start location services
     locationManager = [[CLLocationManager alloc] init];
@@ -67,7 +75,6 @@
 
     // Create tracklist, thus allowing the audioplayer to get soundUrls
     _tracklist = [[Tracklist alloc] init];
-
 }
 
 - (void)didReceiveMemoryWarning {

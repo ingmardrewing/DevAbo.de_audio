@@ -29,10 +29,14 @@
     NSLog(@"comparing to %@ ...", self->trackname );
     float delta_lat = self->latitude - latitude_;
     float delta_lon = self->longitude - longitude_;
-    if (delta_lat < 0.00005f && delta_lon < 0.00005f && self->unplayed ){
+    bool close_enough = delta_lat < 0.0001f && delta_lon < 0.0001f;
+    if ( close_enough && self->unplayed ){
         NSLog(@"we found a place ..");
         self->unplayed = NO;
         return YES;
+    }
+    else if ( ! close_enough && ! self->unplayed ) {
+        self->unplayed = YES;
     }
     NSLog(@"no match");
     return NO;
