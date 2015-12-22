@@ -12,7 +12,6 @@
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate>
 
-- (IBAction)Play:(id)sender;
 - (void) setForeground;
 - (void) setBackground;
 

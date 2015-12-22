@@ -33,17 +33,12 @@
     [locationManager startMonitoringSignificantLocationChanges];
 }
 
-- (IBAction)Play:(id)sender {
-    NSLog(@"pushed play");
-    [_audioPlayer play];
-}
-
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     float Lat = locationManager.location.coordinate.latitude;
     float Long = locationManager.location.coordinate.longitude;
     
     NSURL *soundUrl = [_tracklist getSoundUrlAtLongitude:Long andLatitiude:Lat ];
-    if( NULL != soundUrl){
+    if( NULL != soundUrl ){
         NSLog(@"soundUrl: %@", soundUrl.absoluteString );
         _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
         [_audioPlayer play];
