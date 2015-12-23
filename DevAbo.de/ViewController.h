@@ -14,6 +14,9 @@
 
 - (void) setForeground;
 - (void) setBackground;
+- (void) logWithString: (NSString *) string;
+
+@property (weak, nonatomic) IBOutlet UITextView *textfield;
 
 @end
 

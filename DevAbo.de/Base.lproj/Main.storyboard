@@ -31,18 +31,34 @@
                                     <action selector="locate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zOL-dA-61R"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BSm-N1-Qs0">
+                                <rect key="frame" x="29" y="20" width="551" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mnr-JT-baj">
+                                <rect key="frame" x="20" y="28" width="318" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="mz9-cb-Lte"/>
                                 <exclude reference="qWH-GX-ZBI"/>
+                                <exclude reference="BSm-N1-Qs0"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="textfield" destination="mnr-JT-baj" id="hgM-XH-Tk8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="320" y="260"/>
         </scene>
     </scenes>
 </document>

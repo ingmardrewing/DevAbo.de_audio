@@ -25,8 +25,8 @@
             [[Track alloc] initWithTrackname:@"Schulberg"
                                  andFilename:@"schulberg"
                                  andFiletype:@"mp3"
-                                 andLatitude:50.0836f
-                                andLongitude:8.2368f ],
+                                 andLatitude:50.0840f
+                                andLongitude:8.2364f ],
             [[Track alloc] initWithTrackname:@"Synagoge"
                                  andFilename:@"synagoge"
                                  andFiletype:@"mp3"
@@ -38,6 +38,7 @@
                                  andLatitude:50.0830f
                                 andLongitude:8.2454f ],
             nil];
+    NSLog(@"Tracklist instantiated");
     return self;
 }
 
