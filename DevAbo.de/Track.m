@@ -8,6 +8,7 @@
 
 #import "Track.h"
 #import <Foundation/Foundation.h>
+#import <math.h>
 
 @implementation Track
 
@@ -26,9 +27,10 @@
 }
 
 - (BOOL) isNearLatitude:(float)latitude_ andLongitude:(float)longitude_ {
-    NSLog(@"comparing to %@ ...", self->trackname );
-    float delta_lat = self->latitude - latitude_;
-    float delta_lon = self->longitude - longitude_;
+    float delta_lat = fabsf( self->latitude - latitude_ );
+    float delta_lon = fabsf( self->longitude - longitude_ );
+    NSLog(@"comparing to %@  delta_lat: %f, detla_lon: %f ...", self->trackname, delta_lat, delta_lon );
+
     bool close_enough = delta_lat < 0.0001f && delta_lon < 0.0001f;
     if ( close_enough && self->unplayed ){
         NSLog(@"we found a place ..");

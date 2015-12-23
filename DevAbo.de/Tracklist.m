@@ -20,8 +20,8 @@
             [[Track alloc] initWithTrackname:@"Marktkirche"
                                  andFilename:@"marktkirche"
                                  andFiletype:@"mp3"
-                                 andLatitude:50.0822809f
-                                andLongitude:8.2405615f ],
+                                 andLatitude:50.08228f
+                                andLongitude:8.24056f ],
             [[Track alloc] initWithTrackname:@"Schulberg"
                                  andFilename:@"schulberg"
                                  andFiletype:@"mp3"
