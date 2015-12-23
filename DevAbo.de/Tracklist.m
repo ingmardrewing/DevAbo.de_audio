@@ -49,13 +49,12 @@
 }
 
 - (NSURL *) getSoundUrlAtLongitude:(float) longitude_ andLatitiude: (float) latitude_ {
-    NSURL *trackUrl;
     for( Track *track in self->tracks){
         if ( [track isNearLatitude:latitude_ andLongitude:longitude_] ) {
             return [self getSoundUrlFor:track];
         }
     }    
-    return trackUrl;
+    return NULL;
 }
 
 @end
