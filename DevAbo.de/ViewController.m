@@ -15,6 +15,8 @@
     AVAudioPlayer *_audioPlayer;
     Tracklist *_tracklist;
     CLLocationManager *locationManager;
+    NSTimer *timer;
+    UIBackgroundTaskIdentifier *bgTask;
 }
 
 @end
@@ -35,6 +37,23 @@
     [locationManager stopUpdatingLocation];
     [locationManager startMonitoringSignificantLocationChanges];
      */
+    NSLog(@"setBackground");
+    
+    [self->locationManager stopUpdatingLocation];
+    
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
+        [app endBackgroundTask:bgTask];
+        bgTask =  UIBackgroundTaskInvalid;
+    }];
+    
+    self->timer = [NSTimer scheduledTimerWithTimeInterval:15
+                                                  target:self->locationManager
+                                                selector:@selector(startUpdatingLocation)
+                                                userInfo:nil
+                                                 repeats:YES];
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
@@ -74,7 +93,6 @@
     // Create tracklist, thus allowing the audioplayer to get soundUrls
     _tracklist = [[Tracklist alloc] init];
     
-    
     // Start location services
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -84,7 +102,6 @@
     locationManager.pausesLocationUpdatesAutomatically = NO;
 
     [locationManager requestAlwaysAuthorization];
-    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning {

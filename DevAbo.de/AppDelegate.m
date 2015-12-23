@@ -34,6 +34,7 @@
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     ViewController *rootViewController = window.rootViewController;
     [rootViewController setBackground];
+    
 }
 
 - (void)willEnterForeground:(UIApplication *)application {

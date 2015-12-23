@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>The app DevAbo.de needs your location to trigger the playing of the audio files associated with the location.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>The app DevAbo.de needs your location to trigger the playing of the audio files associated with the location.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>

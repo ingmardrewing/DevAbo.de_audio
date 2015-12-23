@@ -25,8 +25,8 @@
             [[Track alloc] initWithTrackname:@"Schulberg"
                                  andFilename:@"schulberg"
                                  andFiletype:@"mp3"
-                                 andLatitude:50.0840f
-                                andLongitude:8.2364f ],
+                                 andLatitude:50.0835f
+                                andLongitude:8.2372f ],
             [[Track alloc] initWithTrackname:@"Synagoge"
                                  andFilename:@"synagoge"
                                  andFiletype:@"mp3"
