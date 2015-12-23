@@ -18,27 +18,15 @@
     NSTimer *timer;
     UIBackgroundTaskIdentifier bgTask;
 }
-
 @end
 
 @implementation ViewController
 
 - (void) setForeground {
-    /*
-    NSLog(@"setForeground");
-    [locationManager stopMonitoringSignificantLocationChanges];
-    [locationManager startUpdatingLocation];
-     */
+    [self->locationManager stopUpdatingLocation];
 }
 
 - (void) setBackground {
-    /*
-    NSLog(@"setBackground");
-    [locationManager stopUpdatingLocation];
-    [locationManager startMonitoringSignificantLocationChanges];
-     */
-    NSLog(@"setBackground");
-    
     [self->locationManager stopUpdatingLocation];
     
     UIApplication *app = [UIApplication sharedApplication];
@@ -48,7 +36,7 @@
         bgTask =  UIBackgroundTaskInvalid;
     }];
     
-    self->timer = [NSTimer scheduledTimerWithTimeInterval:15
+    self->timer = [NSTimer scheduledTimerWithTimeInterval:15 // seconds
                                                   target:self->locationManager
                                                 selector:@selector(startUpdatingLocation)
                                                 userInfo:nil
@@ -59,49 +47,48 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     float Lat = locationManager.location.coordinate.latitude;
     float Long = locationManager.location.coordinate.longitude;
-    
     [self logWithString:[NSString stringWithFormat:@"Lat: %f Long: %f\n", Lat, Long] ];
-    
     NSURL *soundUrl = [_tracklist getSoundUrlAtLongitude:Long andLatitiude:Lat ];
     if( NULL != soundUrl ){
-        [self logWithString:[NSString stringWithFormat:@"%@\n", soundUrl.path ] ];
-        NSLog(@"soundUrl: %@", soundUrl.absoluteString );
-        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-        [_audioPlayer play];
+        [self playSoundUrl:soundUrl];
     }
+}
+
+- (void)playSoundUrl:(NSURL *)soundUrl {
+    [self logWithString:[NSString stringWithFormat:@"%@\n", soundUrl.path ] ];
+    NSLog(@"soundUrl: %@", soundUrl.absoluteString );
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+    [_audioPlayer play];
 }
 
 - (void) logWithString: (NSString *) string {
-    _textfield.text = [_textfield.text stringByAppendingString:
-                       string
-                       ];
+    _textfield.text = [_textfield.text stringByAppendingString:string ];
 }
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    NSLog(@"view did load");
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    
-    NSError *setCategoryError = nil;
-    if (![session setCategory:AVAudioSessionCategoryPlayback
-                  withOptions:AVAudioSessionCategoryOptionMixWithOthers
-                        error:&setCategoryError]) {
-        // handle error
-    }
-    // Create tracklist, thus allowing the audioplayer to get soundUrls
-    _tracklist = [[Tracklist alloc] init];
-    
-    // Start location services
+- (void)create_location_manager {
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.activityType = CLActivityTypeFitness;
     locationManager.pausesLocationUpdatesAutomatically = NO;
-
     [locationManager requestAlwaysAuthorization];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    
+    NSError *setCategoryError = nil;
+    if (![session setCategory:AVAudioSessionCategoryPlayback
+                  withOptions:AVAudioSessionCategoryOptionMixWithOthers
+                        error:&setCategoryError]) {
+    }
+    
+    _tracklist = [[Tracklist alloc] init];
+    
+    [self create_location_manager];
 }
 
 - (void)didReceiveMemoryWarning {
