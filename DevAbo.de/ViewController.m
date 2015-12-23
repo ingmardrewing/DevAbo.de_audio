@@ -16,7 +16,7 @@
     Tracklist *_tracklist;
     CLLocationManager *locationManager;
     NSTimer *timer;
-    UIBackgroundTaskIdentifier *bgTask;
+    UIBackgroundTaskIdentifier bgTask;
 }
 
 @end
