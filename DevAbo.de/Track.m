@@ -33,12 +33,8 @@
     bool close_enough = delta_lat < 0.0002f && delta_lon < 0.0002f;
     if ( close_enough && self->unplayed ){
         self->unplayed = NO;
-        NSLog(@"setting unplayed = no");
-        NSLog(@"with lat: %f and long: %f", latitude_, longitude_);
-
         return YES;
     }
-
     return NO;
 }
 

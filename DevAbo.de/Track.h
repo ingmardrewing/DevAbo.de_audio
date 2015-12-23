@@ -25,4 +25,5 @@
 
 - (BOOL) isNearLatitude: (float) latitude_ andLongitude: (float) longitude_;
 
+
 @end

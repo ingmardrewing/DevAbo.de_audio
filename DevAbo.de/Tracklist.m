@@ -14,7 +14,6 @@
 
 - (id)init {
     self = [super init];
-    
     self->tracks = [
         [NSArray alloc] initWithObjects:
             [[Track alloc] initWithTrackname:@"Marktkirche"
@@ -38,23 +37,24 @@
                                  andLatitude:50.0830f
                                 andLongitude:8.2454f ],
             nil];
-    NSLog(@"Tracklist instantiated");
     return self;
 }
 
-- (NSURL *) getSoundUrlAtLongitude:(float)longitude_ andLatitiude:(float)latitude_ {
+- (NSURL *)getSoundUrlFor:(Track *) track {
+    NSString *path = [NSString stringWithFormat:@"%@/%@.%@",
+                      [[NSBundle mainBundle] resourcePath],
+                      track->filename ,
+                      track->filetype ] ;
+    return [NSURL fileURLWithPath:path] ;
+}
+
+- (NSURL *) getSoundUrlAtLongitude:(float) longitude_ andLatitiude: (float) latitude_ {
     NSURL *trackUrl;
     for( Track *track in self->tracks){
         if ( [track isNearLatitude:latitude_ andLongitude:longitude_] ) {
-            NSString *path = [NSString stringWithFormat:@"%@/%@.%@",
-                              [[NSBundle mainBundle] resourcePath],
-                              track->filename ,
-                              track->filetype ] ;
-            trackUrl = [NSURL fileURLWithPath:path] ;
-            break;
+            return [self getSoundUrlFor:track];
         }
     }    
-    
     return trackUrl;
 }
 
