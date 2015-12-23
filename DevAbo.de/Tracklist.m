@@ -26,16 +26,16 @@
                                  andFiletype:@"mp3"
                                  andLatitude:50.0835f
                                 andLongitude:8.2372f ],
-            [[Track alloc] initWithTrackname:@"Synagoge"
-                                 andFilename:@"synagoge"
+            [[Track alloc] initWithTrackname:@"Platz der deutschen Einheit"
+                                 andFilename:@"platzderdeutscheneinheit"
                                  andFiletype:@"mp3"
-                                 andLatitude:50.0832f
-                                andLongitude:8.2363f ],
-            [[Track alloc] initWithTrackname:@"Hinter dem Theater"
-                                 andFilename:@"hinterdemtheater"
+                                 andLatitude:50.0807f
+                                andLongitude:8.2360f ],
+            [[Track alloc] initWithTrackname:@"Luisenplatz"
+                                 andFilename:@"luisenplatz"
                                  andFiletype:@"mp3"
-                                 andLatitude:50.0830f
-                                andLongitude:8.2454f ],
+                                 andLatitude:50.0835f
+                                andLongitude:8.2372f ],
             nil];
     return self;
 }
