@@ -11,7 +11,6 @@
 		210190F81C29BC88009DDB43 /* marktkirche.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 210190F71C29BC88009DDB43 /* marktkirche.mp3 */; };
 		210190FA1C29BC93009DDB43 /* schulberg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 210190F91C29BC93009DDB43 /* schulberg.mp3 */; };
 		210190FC1C29BC9E009DDB43 /* synagoge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 210190FB1C29BC9E009DDB43 /* synagoge.mp3 */; };
-		213622A01C26C30E00D667C5 /* test.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2136229F1C26C30E00D667C5 /* test.mp3 */; };
 		213622A31C26C54800D667C5 /* Tracklist.m in Sources */ = {isa = PBXBuildFile; fileRef = 213622A21C26C54800D667C5 /* Tracklist.m */; };
 		213622A51C26CB0600D667C5 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 213622A41C26CB0600D667C5 /* Track.m */; };
 		2145BAE61C26BA010074CADE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2145BAE51C26BA010074CADE /* main.m */; };
@@ -20,7 +19,6 @@
 		2145BAEF1C26BA010074CADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2145BAED1C26BA010074CADE /* Main.storyboard */; };
 		2145BAF11C26BA010074CADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2145BAF01C26BA010074CADE /* Assets.xcassets */; };
 		2145BAF41C26BA010074CADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2145BAF21C26BA010074CADE /* LaunchScreen.storyboard */; };
-		21F1E4451C29ECD7009E25C7 /* empty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 21F1E4441C29ECD7009E25C7 /* empty.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +26,6 @@
 		210190F71C29BC88009DDB43 /* marktkirche.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = marktkirche.mp3; sourceTree = "<group>"; };
 		210190F91C29BC93009DDB43 /* schulberg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = schulberg.mp3; sourceTree = "<group>"; };
 		210190FB1C29BC9E009DDB43 /* synagoge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = synagoge.mp3; sourceTree = "<group>"; };
-		2136229F1C26C30E00D667C5 /* test.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = test.mp3; sourceTree = "<group>"; };
 		213622A11C26C50600D667C5 /* Tracklist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tracklist.h; sourceTree = "<group>"; };
 		213622A21C26C54800D667C5 /* Tracklist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tracklist.m; sourceTree = "<group>"; };
 		213622A41C26CB0600D667C5 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
@@ -43,7 +40,6 @@
 		2145BAF01C26BA010074CADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2145BAF31C26BA010074CADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2145BAF51C26BA010074CADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21F1E4441C29ECD7009E25C7 /* empty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = empty.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +92,10 @@
 		2145BAE41C26BA010074CADE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				21F1E4441C29ECD7009E25C7 /* empty.mp3 */,
 				210190F51C29BC7D009DDB43 /* hinterdemtheater.mp3 */,
 				210190F71C29BC88009DDB43 /* marktkirche.mp3 */,
 				210190F91C29BC93009DDB43 /* schulberg.mp3 */,
 				210190FB1C29BC9E009DDB43 /* synagoge.mp3 */,
-				2136229F1C26C30E00D667C5 /* test.mp3 */,
 				2145BAE51C26BA010074CADE /* main.m */,
 			);
 			name = "Supporting Files";
@@ -172,10 +166,8 @@
 			files = (
 				2145BAF41C26BA010074CADE /* LaunchScreen.storyboard in Resources */,
 				2145BAF11C26BA010074CADE /* Assets.xcassets in Resources */,
-				213622A01C26C30E00D667C5 /* test.mp3 in Resources */,
 				210190FA1C29BC93009DDB43 /* schulberg.mp3 in Resources */,
 				2145BAEF1C26BA010074CADE /* Main.storyboard in Resources */,
-				21F1E4451C29ECD7009E25C7 /* empty.mp3 in Resources */,
 				210190F81C29BC88009DDB43 /* marktkirche.mp3 in Resources */,
 				210190F61C29BC7D009DDB43 /* hinterdemtheater.mp3 in Resources */,
 				210190FC1C29BC9E009DDB43 /* synagoge.mp3 in Resources */,
