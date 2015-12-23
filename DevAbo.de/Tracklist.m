@@ -34,8 +34,8 @@
             [[Track alloc] initWithTrackname:@"Luisenplatz"
                                  andFilename:@"luisenplatz"
                                  andFiletype:@"mp3"
-                                 andLatitude:50.0835f
-                                andLongitude:8.2372f ],
+                                 andLatitude:50.0790f
+                                andLongitude:8.2392f ],
             nil];
     return self;
 }
