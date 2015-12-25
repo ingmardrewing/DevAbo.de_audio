@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Schulberg</string>
+		<key>filename</key>
+		<string>schulberg</string>
+		<key>filetype</key>
+		<string>mp3</string>
+		<key>latitude</key>
+		<real>50.0822</real>
+		<key>longitude</key>
+		<real>8.240500000000001</real>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Platz der deutschen Einheit</string>
+		<key>filename</key>
+		<string>platzderdeutscheneinheit</string>
+		<key>filetype</key>
+		<string>mp3</string>
+		<key>latitude</key>
+		<real>50.0807</real>
+		<key>longitude</key>
+		<real>8.236000000000001</real>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Marktkirche</string>
+		<key>filename</key>
+		<string>marktkirche</string>
+		<key>filetype</key>
+		<string>mp3</string>
+		<key>latitude</key>
+		<real>50.08228</real>
+		<key>longitude</key>
+		<real>8.24056</real>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Luisenplatz</string>
+		<key>filename</key>
+		<string>luisenplatz</string>
+		<key>filetype</key>
+		<string>mp3</string>
+		<key>latitude</key>
+		<real>50.079</real>
+		<key>longitude</key>
+		<real>8.2392</real>
+	</dict>
+</array>
+</plist>

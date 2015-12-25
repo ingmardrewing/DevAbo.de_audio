@@ -30,7 +30,6 @@
     [self->locationManager stopUpdatingLocation];
     
     UIApplication *app = [UIApplication sharedApplication];
-    
     bgTask = [app beginBackgroundTaskWithExpirationHandler:^{
         [app endBackgroundTask:bgTask];
         bgTask =  UIBackgroundTaskInvalid;

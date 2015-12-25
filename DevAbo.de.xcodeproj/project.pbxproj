@@ -17,6 +17,7 @@
 		2145BAEF1C26BA010074CADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2145BAED1C26BA010074CADE /* Main.storyboard */; };
 		2145BAF11C26BA010074CADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2145BAF01C26BA010074CADE /* Assets.xcassets */; };
 		2145BAF41C26BA010074CADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2145BAF21C26BA010074CADE /* LaunchScreen.storyboard */; };
+		215147441C2DAE610092CBCE /* tracklist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215147431C2DAE610092CBCE /* tracklist.plist */; };
 		21F1E4471C2AFDBC009E25C7 /* platzderdeutscheneinheit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 21F1E4461C2AFDBC009E25C7 /* platzderdeutscheneinheit.mp3 */; };
 		21F1E4491C2AFDC7009E25C7 /* luisenplatz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 21F1E4481C2AFDC7009E25C7 /* luisenplatz.mp3 */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		2145BAF01C26BA010074CADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2145BAF31C26BA010074CADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2145BAF51C26BA010074CADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		215147431C2DAE610092CBCE /* tracklist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tracklist.plist; sourceTree = "<group>"; };
 		21F1E4461C2AFDBC009E25C7 /* platzderdeutscheneinheit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = platzderdeutscheneinheit.mp3; sourceTree = "<group>"; };
 		21F1E4481C2AFDC7009E25C7 /* luisenplatz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = luisenplatz.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +87,7 @@
 				213622A21C26C54800D667C5 /* Tracklist.m */,
 				213622A61C26CB1400D667C5 /* Track.h */,
 				213622A41C26CB0600D667C5 /* Track.m */,
+				215147431C2DAE610092CBCE /* tracklist.plist */,
 			);
 			path = DevAbo.de;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			files = (
 				2145BAF41C26BA010074CADE /* LaunchScreen.storyboard in Resources */,
 				2145BAF11C26BA010074CADE /* Assets.xcassets in Resources */,
+				215147441C2DAE610092CBCE /* tracklist.plist in Resources */,
 				210190FA1C29BC93009DDB43 /* schulberg.mp3 in Resources */,
 				21F1E4491C2AFDC7009E25C7 /* luisenplatz.mp3 in Resources */,
 				21F1E4471C2AFDBC009E25C7 /* platzderdeutscheneinheit.mp3 in Resources */,

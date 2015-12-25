@@ -14,30 +14,31 @@
 
 - (id)init {
     self = [super init];
-    self->tracks = [
-        [NSArray alloc] initWithObjects:
-            [[Track alloc] initWithTrackname:@"Marktkirche"
-                                 andFilename:@"marktkirche"
-                                 andFiletype:@"mp3"
-                                 andLatitude:50.08228f
-                                andLongitude:8.24056f ],
-            [[Track alloc] initWithTrackname:@"Schulberg"
-                                 andFilename:@"schulberg"
-                                 andFiletype:@"mp3"
-                                 andLatitude:50.0835f
-                                andLongitude:8.2372f ],
-            [[Track alloc] initWithTrackname:@"Platz der deutschen Einheit"
-                                 andFilename:@"platzderdeutscheneinheit"
-                                 andFiletype:@"mp3"
-                                 andLatitude:50.0807f
-                                andLongitude:8.2360f ],
-            [[Track alloc] initWithTrackname:@"Luisenplatz"
-                                 andFilename:@"luisenplatz"
-                                 andFiletype:@"mp3"
-                                 andLatitude:50.0790f
-                                andLongitude:8.2392f ],
-            nil];
+    self->tracks = [NSMutableArray new];
+    [self readTrackList];
     return self;
+}
+
+- (void)readTrackList {
+    NSString *trackListPath = [[NSBundle mainBundle] pathForResource:@"tracklist" ofType:@"plist"];
+    NSArray *tracklistarray = [[NSArray alloc] initWithContentsOfFile: trackListPath ];
+    
+    for (id track in tracklistarray) {
+        [self addTrackFromPlist:track];
+    }
+}
+
+- (void)addTrackFromPlist:(id)track {
+    float lat = [[track valueForKey:  @"latitude"] floatValue];
+    float lon = [[track valueForKey:  @"longitude"] floatValue];
+    self->tracks
+        = [self->tracks arrayByAddingObject:
+           [ [Track alloc] initWithTrackname: [track objectForKey: @"name"]
+                                andFilename: [track objectForKey: @"filename"]
+                                andFiletype: [track objectForKey: @"filetype"]
+                                andLatitude: lat
+                               andLongitude: lon]
+           ];
 }
 
 - (NSURL *)getSoundUrlFor:(Track *) track {

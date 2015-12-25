@@ -30,7 +30,7 @@
     float delta_lat = fabsf( self->latitude - latitude_ );
     float delta_lon = fabsf( self->longitude - longitude_ );
 
-    bool close_enough = delta_lat < 0.0002f && delta_lon < 0.0002f;
+    bool close_enough = (delta_lat < 0.00001f && delta_lon < 0.0001f) ;
     if ( close_enough && self->unplayed ){
         self->unplayed = NO;
         return YES;
