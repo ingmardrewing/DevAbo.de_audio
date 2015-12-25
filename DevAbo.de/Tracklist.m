@@ -22,7 +22,6 @@
 - (void)readTrackList {
     NSString *trackListPath = [[NSBundle mainBundle] pathForResource:@"tracklist" ofType:@"plist"];
     NSArray *tracklistarray = [[NSArray alloc] initWithContentsOfFile: trackListPath ];
-    
     for (id track in tracklistarray) {
         [self addTrackFromPlist:track];
     }

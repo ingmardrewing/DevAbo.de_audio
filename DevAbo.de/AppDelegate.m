@@ -32,21 +32,20 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    ViewController *rootViewController = window.rootViewController;
-    [rootViewController setBackground];
-    
+    UIViewController *rootViewController =  window.rootViewController;
+    [((ViewController *)rootViewController) setBackground];
 }
 
 - (void)willEnterForeground:(UIApplication *)application {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    ViewController *rootViewController = window.rootViewController;
-    [rootViewController setForeground];
+    UIViewController *rootViewController = window.rootViewController;
+    [((ViewController *)rootViewController) setForeground];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    ViewController *rootViewController = window.rootViewController;
-    [rootViewController setForeground];
+    UIViewController *rootViewController = window.rootViewController;
+    [((ViewController *)rootViewController) setForeground];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
